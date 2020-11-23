@@ -152,7 +152,8 @@ steps:
 
 #### name **required**
 
-    The name of the exported package/binary
+    The name of the exported package/binary.
+    If the name ends with `.pck` or `.zip` only the package will be exported in PCK or ZIP format respectively.
 
 #### preset **required**
 

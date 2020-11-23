@@ -10,11 +10,23 @@ then
 fi
 
 mode="export"
-if [ "$6" = "true" ]
-then
-    echo "Exporting in debug mode!"
-    mode="export-debug"
-fi
+case $1 in
+    *.zip)
+        echo "Exporting ZIP file only!"
+	mode="export-pack"
+	;;
+    *.pck)
+    	echo "Exporting PCK file only!"
+    	mode="export-pack"
+	;;
+    *)
+        if [ "$6" = "true" ]
+        then
+            echo "Exporting in debug mode!"
+            mode="export-debug"
+        fi
+        ;;
+esac
 
 # Export for project
 echo "Building $1 for $2"
